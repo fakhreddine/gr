@@ -30,6 +30,8 @@ public class Hotel implements Serializable {
 	private int codePostalHotel;
 
 	private String faxHotel;
+	private int nbEtoil;
+	
 
 	@Column(columnDefinition = "text")
 	private String descriptionHotel;
@@ -38,7 +40,13 @@ public class Hotel implements Serializable {
 
 	private String villeHotel;
 
-	
+	public int getNbEtoil() {
+		return nbEtoil;
+	}
+
+	public void setNbEtoil(int nbEtoil) {
+		this.nbEtoil = nbEtoil;
+	}
 	public String getEmailHotel() {
 		return emailHotel;
 	}
@@ -91,7 +99,7 @@ public class Hotel implements Serializable {
 	private List<Chambre> chambres;
 
 	// bi-directional many-to-one association to Offre
-	@OneToMany(mappedBy = "hotel")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "hotel", cascade = CascadeType.ALL)
 	private List<Offre> offres;
 
 	public Hotel() {

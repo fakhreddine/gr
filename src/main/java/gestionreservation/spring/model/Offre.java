@@ -19,7 +19,7 @@ public class Offre implements Serializable {
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
 	private String idOffre;
-
+	private String designationOffre;
 	private int prixOffre;
 
 	//bi-directional many-to-one association to Chambre
@@ -32,6 +32,14 @@ public class Offre implements Serializable {
 	@JoinColumn(name="idHotel")
 	private Hotel hotel;
 
+	public String getDesignationOffre() {
+		return designationOffre;
+	}
+
+	public void setDesignationOffre(String designationOffre) {
+		this.designationOffre = designationOffre;
+	}
+
 	//bi-directional many-to-one association to Pension
 	@ManyToOne
 	@JoinColumn(name="idPension")
@@ -42,6 +50,7 @@ public class Offre implements Serializable {
 	@JoinColumn(name="idSaison")
 	private Saison saison;
 
+	
 	public Offre() {
 	}
 

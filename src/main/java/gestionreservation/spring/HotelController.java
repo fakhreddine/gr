@@ -49,8 +49,13 @@ public class HotelController {
 	@RequestMapping(value = "/hotels", method = RequestMethod.GET)
 	public String listHotels(Model model) {
 		//model.addAttribute("hotel", new Hotel());
-		model.addAttribute("listHotels", this.hotelService.listHotels());
+		model.addAttribute("hotels", this.hotelService.listHotels());
 		return "hotels";
+	}
+	@RequestMapping(value = "/hotel/{idHotel}", method = RequestMethod.GET)
+	public String consulterHotel(@PathVariable("idHotel") String idHotel, Model model){
+        model.addAttribute("hotel", this.hotelService.getHotelById(idHotel));
+		return "hotel";
 	}
 	
 	//For add and update person both
@@ -72,14 +77,14 @@ public class HotelController {
 	}
 	
 	@RequestMapping("/hotel/{idHotel}/remove")
-    public String removeHotel(@PathVariable("idHotel") int id){
+    public String removeHotel(@PathVariable("idHotel") String id){
 		
         this.hotelService.removeHotel(id);
         return "redirect:/hotels";
     }
  
     @RequestMapping("/hotel/{idHotel}/edit")
-    public String editHotel(@PathVariable("idHotel") int id, Model model){
+    public String editHotel(@PathVariable("idHotel") String id, Model model){
         model.addAttribute("hotel", this.hotelService.getHotelById(id));
         model.addAttribute("listHotels", this.hotelService.listHotels());
         return "hotel";

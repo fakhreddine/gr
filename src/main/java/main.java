@@ -14,9 +14,10 @@ import gestionreservation.spring.model.Role;
 import gestionreservation.spring.model.Saison;
 import gestionreservation.spring.model.Typechambre;
 import gestionreservation.spring.model.Utilisateur;
+import gestionreservation.spring.security.MD5;
 
 class main {
-	public static void main(String[] args) {
+	public static void main(final String[] args) throws Exception {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		session.beginTransaction();
 		
@@ -96,6 +97,21 @@ class main {
 		session.save(agent);
 		
 		/*Utilisateur*/
+		Utilisateur user0=new Utilisateur();
+		user0.setLogin("admin1");
+		user0.setEmailPers("admin1");
+		user0.setMotDePass(MD5.tomd5("1111"));//MD5 de mot de pass : 1111
+		user0.setAdressePers("RUE 54");
+		user0.setEnabled(true);
+		user0.setAccountNonExpired(true);
+		user0.setAccountNonLocked(true);
+		user0.setEnabled(true);
+		user0.setVillePers("Sousse");
+		List<Role> lr0=new ArrayList<Role>();
+		lr0.add(admin);
+		user0.setAuthorities(lr0);
+		session.save(user0);
+		
 		Utilisateur user1=new Utilisateur();
 		user1.setLogin("admin");
 		user1.setEmailPers("admin");
@@ -185,6 +201,7 @@ class main {
 		hot1.setCodePostalHotel(1000);
 		hot1.setDirecteur(user1);
 		hot1.setFaxHotel("3554585");
+		hot1.setNbEtoil(3);
 		session.save(hot1);
 		
 		Hotel hot2=new Hotel();
@@ -193,6 +210,7 @@ class main {
 		hot2.setCodePostalHotel(1000);
 		hot2.setDirecteur(user1);
 		hot2.setFaxHotel("7355545485");
+		hot1.setNbEtoil(4);
 		session.save(hot2);
 		
 		Hotel hot3=new Hotel();
@@ -201,6 +219,7 @@ class main {
 		hot3.setCodePostalHotel(1000);
 		hot3.setDirecteur(user22);
 		hot3.setFaxHotel("735554548");
+		hot1.setNbEtoil(5);
 		session.save(hot3);
 		
 		
@@ -331,6 +350,7 @@ class main {
 		o1.setPension(pens1);
 		o1.setPrixOffre(80);
 		o1.setSaison(s11);
+		o1.setDesignationOffre("offre1");
 		session.save(o1);
 		
 		Offre o4=new Offre();
@@ -339,6 +359,7 @@ class main {
 		o4.setPension(pens4);
 		o4.setPrixOffre(70);
 		o4.setSaison(s2);
+		o1.setDesignationOffre("offre2");
 		session.save(o4);
 		
 		Offre o2=new Offre();
@@ -347,6 +368,7 @@ class main {
 		o2.setPension(pens2);
 		o2.setPrixOffre(120);
 		o2.setSaison(s10);
+		o1.setDesignationOffre("offre3");
 		session.save(o2);
 		
 		Offre o3=new Offre();
@@ -355,6 +377,7 @@ class main {
 		o3.setPension(pens1);
 		o3.setPrixOffre(60);
 		o3.setSaison(s5);
+		o1.setDesignationOffre("offre4");
 		session.save(o3);
 		
 		

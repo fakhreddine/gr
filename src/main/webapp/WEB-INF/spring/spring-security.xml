@@ -21,7 +21,7 @@
 		<intercept-url pattern="/admin/*" access="hasRole('ANONYMOUS')" />
 		<intercept-url pattern="/client/*" access="hasRole('ANONYMOUS')" />
 		<intercept-url pattern="/reservation/new1" access="hasRole('ANONYMOUS')" />
-		<form-login login-page="/login" default-target-url="/secured/home"
+		<form-login login-page="/logsing" default-target-url="/"
 			authentication-failure-url="/loginError" />
 		<csrf disabled="true"/>
 	</http>

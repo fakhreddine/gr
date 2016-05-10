@@ -33,12 +33,12 @@ public class HotelServiceImpl implements HotelService {
 	}
 
 	@Transactional
-	public Hotel getHotelById(int id) {
+	public Hotel getHotelById(String id) {
 		return this.hotelDAO.getHotelById(id);
 	}
 
 	@Transactional
-	public void removeHotel(int id) {
+	public void removeHotel(String id) {
 		this.hotelDAO.removeHotel(id);
 	}
 

@@ -44,14 +44,14 @@ public class HotelDAOImpl implements HotelDAO {
 		return hotelsList;
 	}
 
-	public Hotel getHotelById(int id) {
+	public Hotel getHotelById(String id) {
 		Session session = this.sessionFactory.getCurrentSession();		
-		Hotel p = (Hotel) session.load(Hotel.class, new Integer(id));
+		Hotel p = (Hotel) session.load(Hotel.class, new String(id));
 		logger.info("Hotel loaded successfully, Hotel details="+p);
 		return p;
 	}
 
-	public void removeHotel(int id) {
+	public void removeHotel(String id) {
 		Session session = this.sessionFactory.getCurrentSession();
 		Hotel p = (Hotel) session.load(Hotel.class, new Integer(id));
 		if(null != p){

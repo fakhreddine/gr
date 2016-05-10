@@ -76,12 +76,8 @@ public class UtilisateurController {
 	@RequestMapping(value = "/helloworld", method = RequestMethod.GET)
 	public String helloWorld(ModelMap model) {
 
-		/*
-		 * Object principal =
-		 * SecurityContextHolder.getContext().getAuthentication().getPrincipal()
-		 * ; User user=null; if (principal instanceof User) { user =
-		 * ((User)principal); }
-		 */
+		Object principal =SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		UserDetails user=null; if (principal instanceof UserDetails) { user =((UserDetails)principal); }
 		// String name = user.getUsername();
 		// model.addAttribute("username", name);
 		model.addAttribute("message", "Welcome to the Hello World page");
@@ -97,6 +93,15 @@ public class UtilisateurController {
 		model.addAttribute("usercon",usercon);
 		model.addAttribute("usersing",usersing);
 		model.addAttribute("idpage",idpage);
+		return "header";
+	}
+	
+	@RequestMapping(value = "/logsing", method = RequestMethod.GET)
+	public String login1(ModelMap model) {
+		Utilisateur usercon=new Utilisateur();
+		Utilisateur usersing=new Utilisateur();
+		model.addAttribute("usercon",usercon);
+		model.addAttribute("usersing",usersing);
 		return "header";
 	}
 	
@@ -150,7 +155,7 @@ public class UtilisateurController {
 
 	}
 	
-	@RequestMapping(value = "/i1", method = RequestMethod.GET)
+	@RequestMapping(value = "/connecter", method = RequestMethod.GET)
 	public String initialise(Model model) {
     	Utilisateur user = new Utilisateur();
       user.setPrenomPers("firstName");

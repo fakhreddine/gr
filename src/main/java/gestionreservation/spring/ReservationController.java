@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,11 +41,13 @@ public class ReservationController {
 		return "reservation";
 	}
 
-	@RequestMapping(value = "/reservations", method = RequestMethod.GET)
+	@RequestMapping(value = "/carts", method = RequestMethod.GET)
 	public String listReservations(Model model) {
-		model.addAttribute("reservation", new Reservation());
+		 UserDetails user = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	      String name = user.getUsername(); //get logged in usernam
 		model.addAttribute("listReservations", this.reservationService.listReservations());
-		return "reservations";
+		model.addAttribute("name",name);
+		return "carts";
 	}
 
 	@RequestMapping("/reservation/{id}/remove")

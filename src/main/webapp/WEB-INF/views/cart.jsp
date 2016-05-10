@@ -123,8 +123,9 @@
                         <p>${offre.prixOffre}</p>
                         <p>${offre.pension.labelPension}</p>
                         <p>${offre.saison.descriptionSaison}</p>
+                        
                         <p>
-                            <a href="" class="btn btn-primary">add to cart!</a> <a href="/hotel/${hotel.idHotel}/offer/${offre.idOffre}" class="btn btn-default">More Info</a>
+                            <a href="#" class="btn btn-primary">add to cart!</a> <a href="#" class="btn btn-default">More Info</a>
                         </p>
                     </div>
                 </div>

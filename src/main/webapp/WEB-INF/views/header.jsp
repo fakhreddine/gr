@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="cr" uri="http://java.sun.com/jstl/core_rt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -32,10 +33,10 @@
 			<li><a href="#">Home</a></li>
 		</c:if>
 		<c:if test="${idpage==2}">
-			<li class="active"><a href="#">Offers</a></li>
+			<li class="active"><a href="offers">Offers</a></li>
 		</c:if>
 		<c:if test="${idpage!=2}">
-			<li><a href="#">Hotels</a></li>
+			<li><a href="offers">Offers</a></li>
 		</c:if>
 		
 		
@@ -47,10 +48,10 @@
 		</c:if>
 		
 		<c:if test="${idpage==4}" >
-			<li class="active"><a href="#">Resevations</a></li>
+			<li class="active"><a href="#">Cart</a></li>
 		</c:if>
 		<c:if test="${idpage!=4}">
-			<li><a href="#">Resevations</a></li>
+			<li><a href="#">Cart</a></li>
 		</c:if>
 		
 		<c:if test="${idpage==5}">
@@ -97,25 +98,46 @@
 						<div class="modal-body">
 							<div class="col-md-6 col-sm-6 no-padng">
 								<div class="model-l">
+								<c:if test="${error eq 'true'}">
+${msg}
+</c:if>
+	<form name='loginForm'
+		action="<c:url value='j_spring_security_check' />" method='POST'>
+
+		<table>
+			<tr>
+				<td>User Name:</td>
+				<td><input type='text' name='j_username' value=''></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type='password' name='j_password' /></td>
+			</tr>
+			<tr>
+				<td><input name="submit" type="submit" value="submit" /></td>
+				<td><input name="reset" type="reset" /></td>
+			</tr>
+		</table>
+
+	</form>
 								
-								
-								<c:url var="conAction" value="connect" ></c:url>
-								<form:form method="post" action="${conAction}" commandName="usercon" >
+							
+								<form:form name='loginForm' action="<c:url value='j_spring_security_check' />" method="post" commandName="usercon">
 										<ul>
 											<li>Email</li>
 											<li>
 											<form:input path="login"  type="text" placeholder="User ID"
-												id="login" name="userName" class="form-control"
+												id="login" name='j_username' class="form-control"
 												onfocus="checkNullProf();" />
 												</li>
 											<li>Password</li>
 											<li><form:input path="motDePass" type="password" placeholder="Password"
-												id="motDePass" name="password" class="form-control"
+												id="motDePass" name='j_password' class="form-control"
 												onfocus="checkNullProf();" /></li>
 											<li><br />
-												<button type="button" onclick="userLogin();" id="logBtn"
-													class="btn btn-default">Submit</button></li>
-											<div style="display: none;" id="loginFail" class="sign">
+												<input type="submit" id="logBtn"
+													class="btn btn-default" /></li>
+											<div style="display: none;" id="loginFail" class="sign" >
 												<li><font color="red"> Username or password is
 														incorrect.</font></li>
 											</div>

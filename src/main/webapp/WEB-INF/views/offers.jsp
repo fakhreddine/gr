@@ -69,10 +69,9 @@
                         <h3>${offre.designationOffre}</h3>
                         <p>${offre.prixOffre}</p>
                         <p>${offre.pension.labelPension}</p>
-                        <p>${offre.saison.descriptionSaison}</p>
-                        
+                        <p>${offre.saison.descriptionSaison}</p>    
                         <p>
-                            <a href="#" class="btn btn-primary">add to cart!</a> <a href="/hotel/${offre.hotel.idHotel}/offer/${offre.idOffre}">More Info</a>
+                            <a href="#" class="btn btn-primary">add to cart!</a> <a href="/gestionreservation/hotel/${offre.hotel.idHotel}/offer/${offre.idOffre}">More Info</a>
                         </p>
                     </div>
                 </div>

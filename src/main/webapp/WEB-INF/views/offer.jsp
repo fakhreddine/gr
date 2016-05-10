@@ -110,7 +110,20 @@
 
         <!-- Related Projects Row -->
         <div class="row">
-
+<div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>${offre.designationOffre}</h3>
+                        <p>${offre.prixOffre}</p>
+                        <p>${offre.pension.labelPension}</p>
+                        <p>${offre.saison.descriptionSaison}</p>    
+                        <p>
+                            <a href="#" class="btn btn-primary">add to cart!</a> <a href="/gestionreservation/hotel/${offre.hotel.idHotel}/offer/${offre.idOffre}">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
             <div class="col-lg-12">
                 <h3 class="page-header">Related Projects</h3>
             </div>

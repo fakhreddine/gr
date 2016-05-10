@@ -40,13 +40,13 @@ public class OffreController {
 
 	@RequestMapping(value = "/offers", method = RequestMethod.GET)
 	public String lOffres(Model model) {
-		model.addAttribute("listOffres", this.offreService.listOffres());
-		return "offres";
+		model.addAttribute("offres", this.offreService.listOffres());
+		return "offers";
 	}
-	@RequestMapping("/offre/{idOffre}")
+	@RequestMapping("hotel/{idHotel}/offer/{idOffre}")
     public String getoffre(@PathVariable("idOffre") String id, Model model){
         model.addAttribute("offre", this.offreService.getOffreById(id));
-        return "offre";
+        return "offer";
     }
 	
 	

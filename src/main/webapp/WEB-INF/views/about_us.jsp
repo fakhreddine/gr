@@ -77,7 +77,7 @@
         </div>    
       </div>  
 
-      <a class="btn btn-primary btn-large book-now" href="book-start.html">Check availability</a>
+      <a class="btn btn-primary btn-large book-now" href="/gestionreservation/reservations">Check availability</a>
 
       
     </div>

@@ -6,7 +6,7 @@
 <html lang="en"><head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Hotel - Bootstrap</title>
+    <title>Reservation - Hotel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -37,10 +37,10 @@
 <body>
 			<div class="row"><!-- start header -->
 				<div class="span5 logo">
-					<a href="index.html">
+					<a href="/gestionreservation/">
 					<div class="row">
 						<div class="span3 logo">
-							<h1>Bootstrap<span>Hotel</span></h1>
+							<h1>Rsv<span>Hotel</span></h1>
 							<p>&#9733;&#9733;&#9733;&#9733;&#9734;</p>
 						</div>
 					</div>

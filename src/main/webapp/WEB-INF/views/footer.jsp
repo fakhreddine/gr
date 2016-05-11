@@ -4,10 +4,10 @@
 	<div class="row footer_section_pre">
 
 	<div class="span4">
-		<h4>Bootstrap Hotel<span class="line"></span></h4>
+		<h4>Reservation Hotel<span class="line"></span></h4>
 
-		<p>2247 Copperhead Road, Hartford, CT 06103</p>
-		<p>Tel: +860-631-7795<br />Fax: +860-631-7796  <br />Email: admin@appsarea.com  </p>
+		<p>ESPRIM Monastir</p>
+		<p>Tel: +216-52-041-573<br />tel: +216-42-417-555  <br />Email: hamanlakhel@live.fr  <br />Email: ghedirafakhreddine@gmail.com  </p>
 
 		<ul data-facebook-action="recommend" data-url="#" class="socialcount socialcount-small recommend grade-a">
 			<li class="facebook"><a title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=#"><span class="social-icon icon-facebook"></span><span class="count"></span></a></li>
@@ -34,7 +34,7 @@
 				</li>				
 				<li class="span2">
 					<div class="thumbnail">
-						<img src="<%=request.getContextPath()%>/resources/css/images/airlines/ba2.gif" alt="">
+						<img src="<%=request.getContextPath()%>/resources/css/images/airlines/ba.png" alt="">
 					</div>
 				</li>				
 				<li class="span2">

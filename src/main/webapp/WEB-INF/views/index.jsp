@@ -159,7 +159,7 @@
 
 				</div>
 		<div id="total_price" class="price">128.00 GBP</div>
-		<a class="btn btn-primary btn-large book-now" href="book.html">Book now!</a>
+		<a class="btn btn-primary btn-large book-now" href="/gestionreservation/reservations">Reserve Now!</a>
 	</div>		
 </div>	
 </form>

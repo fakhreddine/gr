@@ -37,7 +37,7 @@ public class OffreDAOImpl implements OffreDAO {
 
 	public List<Offre> listOffres() {
 		Session session = this.sessionFactory.getCurrentSession();
-		List<Offre> offresList = session.createQuery("from offre").list();
+		List<Offre> offresList = session.createQuery("from Offre").list();
 		for(Offre p : offresList){
 			logger.info("Offre List::"+p);
 		}

@@ -41,13 +41,13 @@ public class ReservationController {
 		return "reservation";
 	}
 
-	@RequestMapping(value = "/carts", method = RequestMethod.GET)
+	@RequestMapping(value = "/reservations", method = RequestMethod.GET)
 	public String listReservations(Model model) {
-		 UserDetails user = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-	      String name = user.getUsername(); //get logged in usernam
+		// UserDetails user = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	     // String name = user.getUsername(); //get logged in usernam
 		model.addAttribute("listReservations", this.reservationService.listReservations());
-		model.addAttribute("name",name);
-		return "carts";
+		//model.addAttribute("name",name);
+		return "reservations";
 	}
 
 	@RequestMapping("/reservation/{id}/remove")

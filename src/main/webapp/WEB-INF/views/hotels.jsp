@@ -1,100 +1,95 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page session="false" %>
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Hotel - Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
 
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/bootstrap-3.3.2.min.css"
-	type="text/css" />
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/bootstrap-example.css"
-	type="text/css" />
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/prettify.css"
-	type="text/css" />
-<script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/jquery-2.1.3.min.js"></script>
-<script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/bootstrap-3.3.2.min.js"></script>
-<script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/prettify.js"></script>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/bootstrap-multiselect.css"
-	type="text/css" />
-<script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/bootstrap-multiselect.js"></script>
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap-responsive.min.css" type="text/css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/hotel.css" type="text/css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/hotel-responsive.css" type="text/css">
 
-<script type="text/javascript">
-	$(document).ready(function() {
-		window.prettyPrint() && prettyPrint();
-	});
-</script>
+		<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/js/slider/default.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/nivo-slider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/socialcount-with-icons.css" type="text/css" media="screen" />
+	
+	<style>
+		div.ui-datepicker{
+			font-size:11px;
+		}
+	</style>
+		
+    <!--[if lt IE 9]>
+		<link rel="stylesheet" href="css/bootstrap_ie7.css" type="text/css">
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
 </head>
-<jsp:include flush="true" page="/logsing/3" /></td>
 
-<div class="container">
-
-	<div class="example">
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$('#example-getting-started').multiselect();
-			});
-		</script>
-		<select id="example-getting-started" multiple="multiple">
-			<option value="cheese">Cheese</option>
-			<option value="tomatoes">Tomatoes</option>
-			<option value="Mozzarella">Mozzarella</option>
-			<option value="Mushrooms">Mushrooms</option>
-			<option value="Pepperoni">Pepperoni</option>
-			<option value="Onions">Onions</option>
-		</select>
-	</div>
-
-
-	<!-- /.row -->
-
-	<!-- Portfolio Item Row -->
-
-
-	<!-- Related Projects Row -->
-	<div class="row">
-
-
-		<c:forEach items="${hotels}" var="hotel">
-			<div class="col-sm-4 col-lg-4 col-md-4">
-				<div class="thumbnail">
-					<img src="http://placehold.it/320x150" alt="${hotel.nomHotel}">
-						<div class="caption">
-							<h4>
-								<a href="hotel/${hotel.idHotel}">${hotel.nomHotel}</a>
-							</h4>
-							<p>${hotel.descriptionHotel}</p>
-						</div>
-						<div class="ratings">
-							<p class="pull-right">...</p>
-							<p>
-								<span class="glyphicon glyphicon-star"></span> <span
-									class="glyphicon glyphicon-star"></span> <span
-									class="glyphicon glyphicon-star"></span> <span
-									class="glyphicon glyphicon-star"></span> <span
-									class="glyphicon glyphicon-star-empty"></span>
-							</p>
-						</div>
-				</div>
-			</div>
+<body>
+	
+		<div class="container-fluid">
+			<jsp:include flush="true" page="/header/2" />
+			<!-- end header -->
+			
+	
+	<div class="span12">	
+		<br /><br />
+		<c:set var="count" value="0" scope="page" />
+		<c:forEach items="${hotels}" var="hotel" >
+				 
+				 <c:if test="${count==0}"> 
+				 	<div class="row-fluid">
+				 </c:if>
+				 <c:set var="count" value="${count + 1}" scope="page"/>
+				<div class="span4">
+					<h3><span>${hotel.nomHotel}</span></h3>
+					<a href="book-start.html"><img src="<%=request.getContextPath()%>/resources/css/images/rooms/luxury_room.jpg" alt="" /></a>
+					<ul class="thumbnails hotel-options no_margin_left">
+						<li class="no_margin_left"><a class="btn btn-large btn-info" href="book-start.html"><img src="<%=request.getContextPath()%>/resources/css/images/icons/Wireless.png" alt="" width="24" height="24"  /></a></li>
+						<li><a class="btn btn-large btn-info" href="book-start.html"><img src="<%=request.getContextPath()%>/resources/css/images/icons/Restaurant-black.png" alt="" width="24"/></a></li>
+						<li><a class="btn btn-large btn-info" href="book-start.html"><img src="<%=request.getContextPath()%>/resources/css/images/icons/Tv-black.png" alt="" width="24"/></a></li>
+						<li><a class="btn btn-large btn-info" href="book-start.html"><img src="<%=request.getContextPath()%>/resources/css/images/icons/Shower.png" alt="" width="24"/></a></li>
+					</ul>
+					<p>${hotel.nomHotel}</p>		
+					<div class="row center">
+						<a class="btn btn-primary btn-large check-availability" href="book-start.html">Show deals</a>
+					</div>			
+				</div>	
+ 
+				 <c:if test="${count==3}"> 
+				 	<c:set var="count" value="0" scope="page"/>
+				 	</div>
+				 </c:if>
+						
 		</c:forEach>
-
-
+		</div>
+			
 	</div>
-	<!-- /.row -->
+	
+
+
+	</div> <!-- /container -->
 
 </div>
-
 <%@include file="footer.jsp"%>
+	
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery.nivo.slider.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/socialcount.min.js"></script>
+	<script src="<%=request.getContextPath()%>/resources/js/jquery.quicksand.js" type="text/javascript"></script>
 
-
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/global.js"></script>
 </body>
 </html>

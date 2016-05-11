@@ -48,7 +48,6 @@ public class HotelController {
 	
 	@RequestMapping(value = "/hotels", method = RequestMethod.GET)
 	public String listHotels(Model model) {
-		//model.addAttribute("hotel", new Hotel());
 		model.addAttribute("hotels", this.hotelService.listHotels());
 		return "hotels";
 	}

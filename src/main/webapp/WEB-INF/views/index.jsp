@@ -1,326 +1,227 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ page session="false"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
-
-<head>
-
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hotel - Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+	
 
-    <title>Modern Business - Start Bootstrap Template</title>
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap-responsive.min.css" type="text/css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/hotel.css" type="text/css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/hotel-responsive.css" type="text/css">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="<%=request.getContextPath()%>/resources/css/modern-business.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="<%=request.getContextPath()%>/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/js/slider/default.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/nivo-slider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/socialcount-with-icons.css" type="text/css" media="screen" />
+	
+	<style>
+		div.ui-datepicker{
+			font-size:11px;
+		}
+	</style>
+		
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+		<link rel="stylesheet" href="css/bootstrap_ie7.css" type="text/css">
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
 </head>
 
 <body>
+	
+		<div class="container-fluid">
+			<div class="row"><!-- start header -->
+				<jsp:include flush="true" page="/header/1" />
+				<!-- end header --><div class="row-fluid slideshow-row">
+	
+	<div class="span12 slideshow">
+		<div class="slider-wrapper theme-default">
+			<div class="ribbon"></div>
+			<div id="nivoslider-125" class="nivoSlider">
+				<img src="<%=request.getContextPath()%>/resources/css/images/slide-1.png" alt="" />
+				<img src="<%=request.getContextPath()%>/resources/css/images/slide-2.png" alt="" />
+				<img src="<%=request.getContextPath()%>/resources/css/images/slide-3.png" alt="" />
+			</div>
+		</div>
+		<div id="nivoslider-125-caption-0" class="nivo-html-caption">You can add captions too&#8230;</div>
+	</div>
+	
+</div>
+<div class="row-fluid home">
+	<div class="span12">
+		<h2>start <span>Booking your room</span><br > select your dates and options below</h2>
+	</div>
+</div>
+<form class="form-inline">
+	<div class="row-fluid home">
+		<div class="span3">
+						<div class="room_selector" data-price="34" data-adults="1" data-kids="1">
+				<h5><a href="#" class="pull-left"><i class="icon-chevron-left"></i></a>Single room<a href="#" class="pull-right "><i class="icon-chevron-right"></i></a></h5>
+				<a href="listings.html"><img src="<%=request.getContextPath()%>/resources/css/images/rooms/single_room.jpg" alt="" /></a>
+				<p>All single rooms have one single bed and sleeps one adult. A 25-inch TV is included.</p>
+			</div>
+			<div class="room_selector" data-price="48"  data-adults="2" data-kids="1" style="display: none;">
+				<h5><a href="#" class="pull-left "><i class="icon-chevron-left"></i></a>Double Room<a href="#" class="pull-right "><i class="icon-chevron-right"></i></a></h5>
+				<a href="listings.html"><img src="<%=request.getContextPath()%>/resources/css/images/rooms/double_room.jpg" alt="" /></a>
+				<p>All double rooms have a single double bed and sleeps two adults.</p>
+			</div>		
+			<div class="room_selector" data-price="62" data-adults="3" data-kids="2" style="display: none;">
+				<h5><a href="#" class="pull-left "><i class="icon-chevron-left"></i></a>Triple Room<a href="#" class="pull-right "><i class="icon-chevron-right"></i></a></h5>
+				<a href="listings.html"><img src="<%=request.getContextPath()%>/resources/css/images/rooms/triple_room.jpg" alt="" /></a>
+				<p>All triple rooms have one double bed and a single bed and sleeps up to three people. </p>
+			</div>	
+			<div class="room_selector" data-price="72" data-adults="4" data-kids="3" style="display: none;">
+				<h5><a href="#" class="pull-left "><i class="icon-chevron-left"></i></a>Luxury Room<a href="#" class="pull-right "><i class="icon-chevron-right"></i></a></h5>
+				<a href="listings.html"><img src="<%=request.getContextPath()%>/resources/css/images/rooms/luxury_room.jpg" alt="" /></a>
+				<p>All rooms have two double beds and a balcony. Sleeps up to four adults.</p>
+			</div>		
+			<div class="room_selector" data-price="97" data-adults="4" data-kids="3" style="display: none;">
+				<h5><a href="#" class="pull-left "><i class="icon-chevron-left"></i></a>Private pool room<a href="#" class="pull-right "><i class="icon-chevron-right"></i></a></h5>
+				<a href="listings.html"><img src="<%=request.getContextPath()%>/resources/css/images/rooms/private_pool.jpg" alt="" /></a>
+				<p>A private pool, two double beds and a sea view. Sleeps up to four adults.</p>
+			</div>
+			<div class="room_selector" data-price="128" data-adults="5" data-kids="4" style="display: none;">
+				<h5><a href="#" class="pull-left "><i class="icon-chevron-left"></i></a>Private villa<a href="#" class="pull-right "><i class="icon-chevron-right"></i></a></h5>
+				<a href="listings.html"><img src="<%=request.getContextPath()%>/resources/css/images/rooms/private_villa.jpg" alt="" /></a>
+				<p>All villas have an en-suite bathroom and sundeck. Sleeps up to five adults.</p>
+			</div>
+		</div>		
+		<div class="span3 home_calendar">
+						<div class="form-horizontal">			
+				<div class="control-group">
+					<label class="control-label pull-left" for="inputEmail">Arrive</label>
+					<div class="controls">
+						<input type="text" value="" class="span2 check-in-date" value="2012/11/22"/>
+					</div>
+				</div>
+			</div>
+			<div class="datepicker_from"></div>
+		</div>
+		<div class="span3 home_calendar">
+						<div class="form-horizontal">			
+				<div class="control-group">
+					<label class="control-label pull-left" for="inputEmail">Depart</label>
+					<div class="controls">
+						<input type="text" value="" class="span2 check-out-date" value="2012/11/22"/>
+					</div>
+				</div>
+			</div>
+			<div class="datepicker_to"></div>
+		</div>
 
-<jsp:include flush="true" page="/logsing/1" /></td>
+		<div class="span3">
+			<div class="form-horizontal">
+				
+				<div class="control-group">
+					<label class="control-label" for="inputEmail">Rooms</label>
+					<div class="controls">
+						<select class="span1 select_rooms">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+					</div>
+				</div>			
+				
+				
+				<div class="control-group">
+					<label class="control-label" for="inputEmail">Adults per room</label>
+					<div class="controls">
+						<select class="span1 select_adults">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label" for="inputEmail">Kids per room</label>
+					<div class="controls">
+						<select class="span1 select_kids">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+					</div>
+				</div>
+				
+				
 
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="services.html">Services</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="portfolio-1-col.html">1 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-2-col.html">2 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-3-col.html">3 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-4-col.html">4 Column Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="portfolio-item.html">Single Portfolio Item</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="blog-home-1.html">Blog Home 1</a>
-                            </li>
-                            <li>
-                                <a href="blog-home-2.html">Blog Home 2</a>
-                            </li>
-                            <li>
-                                <a href="blog-post.html">Blog Post</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="full-width.html">Full Width Page</a>
-                            </li>
-                            <li>
-                                <a href="sidebar.html">Sidebar Page</a>
-                            </li>
-                            <li>
-                                <a href="faq.html">FAQ</a>
-                            </li>
-                            <li>
-                                <a href="404.html">404</a>
-                            </li>
-                            <li>
-                                <a href="pricing.html">Pricing Table</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 1</h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 2</h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 3</h2>
-                </div>
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-    </header>
-
-    <!-- Page Content -->
-    <div class="container">
-
-        <!-- Marketing Icons Section -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">
-                    Welcome to Modern Business
-                </h1>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i> Bootstrap v3.2.0</h4>
-                    </div>
-                    <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-gift"></i> Free &amp; Open Source</h4>
-                    </div>
-                    <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
-                    </div>
-                    <div class="panel-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Portfolio Section -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Portfolio Heading</h2>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Features Section -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Modern Business Features</h2>
-            </div>
-            <div class="col-md-6">
-                <p>The Modern Business template by Start Bootstrap includes:</p>
-                <ul>
-                    <li><strong>Bootstrap v3.2.0</strong>
-                    </li>
-                    <li>jQuery v1.11.0</li>
-                    <li>Font Awesome v4.1.0</li>
-                    <li>Working PHP contact form with validation</li>
-                    <li>Unstyled page elements for easy customization</li>
-                    <li>17 HTML pages</li>
-                </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-            </div>
-            <div class="col-md-6">
-                <img class="img-responsive" src="http://placehold.it/700x450" alt="">
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Call to Action Section -->
-        <div class="well">
-            <div class="row">
-                <div class="col-md-8">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
-                </div>
-                <div class="col-md-4">
-                    <a class="btn btn-lg btn-default btn-block" href="#">Call to Action</a>
-                </div>
-            </div>
-        </div>
-
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
-                </div>
-            </div>
-        </footer>
-
-    </div>
-    <!-- /.container -->
+				</div>
+		<div id="total_price" class="price">128.00 GBP</div>
+		<a class="btn btn-primary btn-large book-now" href="book.html">Book now!</a>
+	</div>		
+</div>	
+</form>
+<hr />
+<div class="row-fluid">
+	
+	<div class="span3">
+		<h3><span>R</span>ooms</h3>
+		<a href="rooms.html"><img src="<%=request.getContextPath()%>/resources/css/images/rooms.jpg" alt="" /></a>
+		<p>View our range of availiable rooms and options</p>
+	</div>		
+	<div class="span3">
+		<h3><span>S</span>ervices</h3>
+		<a href="facilities.html"><img src="<%=request.getContextPath()%>/resources/css/images/services.png" alt="" /></a>
+		<p>We have a gym, swimming pool, golf course, and much more</p>
+	</div>		
+	<div class="span3">
+		<h3><span>P</span>romotions</h3>
+		<a href="promotions.html"><img src="<%=request.getContextPath()%>/resources/css/images/promotions.png" alt="" /></a>
+		<p>Stay five nights and get one night totally <b>FREE</b>!</p>
+	</div>		
+	<div class="span3">
+		<h3><span>L</span>ocation</h3>
+		<a href="map.html"><img src="<%=request.getContextPath()%>/resources/css/images/location.jpg" alt="" /></a>
+		<p>We're easily accessible - go anywhere quickly.</p>
+	</div>		
+</div>		
 
 
+<div class="row">
+	<div class="span12 what_people_say">
+		<div id="quotes">
+			<blockquote class="textItem" style="display: none;">
+				<p>This is the best hotel I've ever been to.</p>
+				<small>Someone famous <cite title="Source Title">Source Title</cite></small>
+			</blockquote>			
+			
+			<blockquote class="textItem" style="display: none;">
+				<p>The food is incredible.</p>
+				<small>Someone famous <cite title="Source Title">Source Title</cite></small>
+			</blockquote>			
+			
+			<blockquote class="textItem" style="display: none;">
+				<p>Beyond All Expectations</p>
+				<small>Someone famous <cite title="Source Title">Source Title</cite></small>
+			</blockquote>
+		</div>
+	</div>	
+</div></div> <!-- /container -->
+</div>
+</div>
+<jsp:include flush="true" page="/footer" />
 
 
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery.nivo.slider.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/socialcount.min.js"></script>
+	<script src="<%=request.getContextPath()%>/resources/js/jquery.quicksand.js" type="text/javascript"></script>
 
-
-<%@include file="footer.jsp" %>
-    <!-- jQuery -->
-    <script src="<%=request.getContextPath()%>/resources/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
-
-    <!-- Script to Activate the Carousel -->
-    <script>
-   $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-    </script>
-
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/global.js"></script>
 </body>
-
 </html>

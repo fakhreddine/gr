@@ -30,11 +30,11 @@ public class ChambreController {
 		this.chambreService = ps;
 	}
 	
-	@RequestMapping(value = "/chambres", method = RequestMethod.GET)
+	@RequestMapping(value = "/rooms", method = RequestMethod.GET)
 	public String listChambres(Model model) {
 		model.addAttribute("chambre", new Chambre());
 		model.addAttribute("listChambres", this.chambreService.listChambres());
-		return "chambre";
+		return "chambres";
 	}
 	
 	//For add and update person both

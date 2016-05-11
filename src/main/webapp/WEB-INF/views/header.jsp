@@ -1,229 +1,120 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="cr" uri="http://java.sun.com/jstl/core_rt"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<link
-	href="<%=request.getContextPath()%>/resources/navbar/css/font-awesome.min.css"
-	rel="stylesheet" />
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap.css" />
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap-responsive.css" />
-<link
-	href="<%=request.getContextPath()%>/resources/css/header_login.css"
-	rel="stylesheet" />
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page session="false" %>
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Hotel - Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap-responsive.min.css" type="text/css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/hotel.css" type="text/css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/hotel-responsive.css" type="text/css">
+
+		<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/js/slider/default.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/nivo-slider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/socialcount-with-icons.css" type="text/css" media="screen" />
+	
+	<style>
+		div.ui-datepicker{
+			font-size:11px;
+		}
+	</style>
+		
+    <!--[if lt IE 9]>
+		<link rel="stylesheet" href="css/bootstrap_ie7.css" type="text/css">
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
 </head>
 
-<nav class="navbar navbar-inverse">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="#">WebSiteName</a>
-		</div>
-		<ul class="nav navbar-nav">
-		
-		<c:if test="${idpage==1}">
-			<li class="active"><a href="#">Home</a></li>
-		</c:if>
-		<c:if test="${idpage!=1}">
-			<li><a href="#">Home</a></li>
-		</c:if>
-		<c:if test="${idpage==2}">
-			<li class="active"><a href="offers">Offers</a></li>
-		</c:if>
-		<c:if test="${idpage!=2}">
-			<li><a href="offers">Offers</a></li>
-		</c:if>
-		
-		
-		<c:if test="${idpage==3}">
-			<li class="active"><a href="#">Hotels</a></li>
-		</c:if>
-		<c:if test="${idpage!=3}">
-			<li><a href="#">Hotels</a></li>
-		</c:if>
-		
-		<c:if test="${idpage==4}" >
-			<li class="active"><a href="#">Cart</a></li>
-		</c:if>
-		<c:if test="${idpage!=4}">
-			<li><a href="#">Cart</a></li>
-		</c:if>
-		
-		<c:if test="${idpage==5}">
-			<li class="active"><a href="#">About us</a></li>
-		</c:if>
-		<c:if test="${idpage!=5}">
-			<li><a href="#">About us</a></li>
-		</c:if>
-		<c:if test="${idpage==6}">
-			<li class="active"><a href="#">Contact</a></li>
-		</c:if>
-		<c:if test="${idpage!=6}">
-			<li><a href="#">Contact</a></li>
-		</c:if>
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<li>
-				<a href="#myModal" data-toggle="modal"> 
-					<span class="glyphicon glyphicon-user" ></span>
-					Sign up/login
-				</a>
-				
-			</li>
-			
-		</ul>
-	</div>
-</nav>
-
-<div class="container">
-	<div class="row">
-		<div class="bs-example">
-			<!-- Button HTML (to Trigger Modal) -->
-
-			<!-- Modal HTML -->
-			<div id="myModal" class="modal fade">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"
-								aria-hidden="true">×</button>
-							<h4 class="modal-title">Login & Register</h4>
+<body>
+			<div class="row"><!-- start header -->
+				<div class="span5 logo">
+					<a href="index.html">
+					<div class="row">
+						<div class="span3 logo">
+							<h1>Bootstrap<span>Hotel</span></h1>
+							<p>&#9733;&#9733;&#9733;&#9733;&#9734;</p>
 						</div>
-
-						<div class="modal-body">
-							<div class="col-md-6 col-sm-6 no-padng">
-								<div class="model-l">
-								<c:if test="${error eq 'true'}">
-${msg}
-</c:if>
-	<form name='loginForm'
-		action="<c:url value='j_spring_security_check' />" method='POST'>
-
-		<table>
-			<tr>
-				<td>User Name:</td>
-				<td><input type='text' name='j_username' value=''></td>
-			</tr>
-			<tr>
-				<td>Password:</td>
-				<td><input type='password' name='j_password' /></td>
-			</tr>
-			<tr>
-				<td><input name="submit" type="submit" value="submit" /></td>
-				<td><input name="reset" type="reset" /></td>
-			</tr>
-		</table>
-
-	</form>
-								
-							
-								<form:form name='loginForm' action="<c:url value='j_spring_security_check' />" method="post" commandName="usercon">
-										<ul>
-											<li>Email</li>
-											<li>
-											<form:input path="login"  type="text" placeholder="User ID"
-												id="login" name='j_username' class="form-control"
-												onfocus="checkNullProf();" />
-												</li>
-											<li>Password</li>
-											<li><form:input path="motDePass" type="password" placeholder="Password"
-												id="motDePass" name='j_password' class="form-control"
-												onfocus="checkNullProf();" /></li>
-											<li><br />
-												<input type="submit" id="logBtn"
-													class="btn btn-default" /></li>
-											<div style="display: none;" id="loginFail" class="sign" >
-												<li><font color="red"> Username or password is
-														incorrect.</font></li>
-											</div>
-										</ul>
-									</form:form>
-									<div class="clearfix"></div>
-									<form method="post" id="logFrm1" class="log-frm" name="logFrm1">
-										<ul>
-											<li><a class="for-got" onclick="ayantoggle();"
-												href="javascript:;">Forgot your password?</a>
-												<div class="forgot">
-													<ul>
-														<li><p>Enter your Email Address here to receive a
-																link to change password.</p></li>
-														<li>Email Id</li>
-														<li><input type="text" placeholder="Your email id"
-															id="forgetemailId" class="form-control"
-															name="forgetemailId"></li>
-														<li><button type="button" class="btn btn-default"
-																onclick="forgot();">Send Mail</button></li>
-													</ul>
-												</div></li>
-										</ul>
-									</form>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 no-padng">
-								<div class="model-r">
-									<div class="o-r">
-										<span>OR</span>
-									</div>
-									<c:url var="singupAction" value="singup" ></c:url>
-								<form:form method="post" action="${singupAction}" commandName="usersing" id="logFrm" class="log-frm" name="logFrm">
-										<ul>
-											<li>First Name</li>
-											<li><form:input path="prenomPers"  type="text" placeholder="First Name"
-												name="fName" class="form-control" /></li>
-											<li>Last Name</li>
-											<li><form:input path="nomPers"  type="text" placeholder="Last Name"
-												name="lName" class="form-control" /></li>
-											<li>Email</li>
-											<li><form:input path="emailPers"  type="text" placeholder="Email Id"
-												name="emailId" class="form-control" /></li>
-											<li>Password</li>
-											<li><form:input path="motDePass"  type="password" placeholder="Password"
-												name="password" class="form-control" /></li>
-											<li>Confirm Password</li>
-											<li><form:input path="motDePass"  type="password"
-												placeholder="Confirm Password" name="repassword"
-												class="form-control" /></li>
-											<br>
-											<li><input type="submit" name="userRegBtn"
-													class="btn btn-default" value="valider"></input></li>
-											<div style="display: none;" class="sign greenglow">
-												<li><i class="icon-check"></i><br> <font
-													color="red"> User registration successful.<br>
-														Your login Url already send to your email.
-
-												</font></li>
-											</div>
-											<div style="display: none;" id="regnSuc11"
-												class="sign redglow">
-												<li><i class="icon-mail"></i><br> <font
-													color="red"> Email Exist.</font></li>
-											</div>
-										</ul>
-									</form:form>
-								</div>
-							</div>
-
-							<div class="clearfix"></div>
-						</div>
-						
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<script src="<%=request.getContextPath()%>/resources/js/header_login.js"></script>
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/js/jquery-1.11.1.js"></script>
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/js/bootstrap.js"></script>
-<script
-	src="<%=request.getContextPath()%>/resources/inscription/js/inscription.js"></script>
+					</a>
+				</div>		
+				<div class="span6 pull-right main_menu">
+					<div class="navbar">
+						<div class="container">
+							 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</a>
 
+							<div class="nav-collapse">
+								<ul class="nav nav-pills">
+									<c:if test="${idpage==1}">
+										<li class="active"><a href="/gestionreservation/">Home</a></li>
+									</c:if>
+									<c:if test="${idpage!=1}">
+										<li class=""><a href="/gestionreservation/">Home</a></li>
+									</c:if>
+									<c:if test="${idpage==2}">
+										<li class="active"><a href="/gestionreservation/hotels">Hotels</a></li>
+									</c:if>
+									<c:if test="${idpage!=2}">
+										<li class=""><a href="/gestionreservation/hotels">Hotels</a></li>
+									</c:if>
+									<c:if test="${idpage==3}">
+										<li class="active"><a href="/gestionreservation/rooms">Rooms</a></li>
+									</c:if>
+									<c:if test="${idpage!=3}">
+										<li class=""><a href="/gestionreservation/rooms">Rooms</a></li>
+									</c:if>
+									<c:if test="${idpage==4}">
+										<li class="active"><a href="/gestionreservation/reservations">Reservations</a></li>
+									</c:if>
+									<c:if test="${idpage!=4}">
+										<li class=""><a href="/gestionreservation/reservations">Reservations</a></li>
+									</c:if>
+									<c:if test="${idpage==5}">
+										<li class="active"><a href="/gestionreservation/gallery">Gallery</a></li>
+									</c:if>
+									<c:if test="${idpage!=5}">
+										<li><a href="/gestionreservation/gallery">Gallery</a></li>
+									</c:if>
+									<c:if test="${idpage==6}">
+										<li class="active"><a href="/gestionreservation/about_us">About Us</a></li>
+									</c:if>
+									<c:if test="${idpage!=6}">
+										<li><a href="/gestionreservation/about_us">About Us</a></li>
+									</c:if>
+									<c:if test="${idpage==7}">
+										<li class="active"><a href="/gestionreservation/singin">Sing in /Log in</a></li>
+									</c:if>
+									<c:if test="${idpage!=7}">
+										<li><a href="/gestionreservation/singin">Sing in /Log in</a></li>
+									</c:if>
+								</ul>
+							</div><!-- /.nav-collapse -->
+						</div>
+					</div><!-- /navbar -->
+				</div>
+			</div><!-- end header --><div class="row book-start">
+
+
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery.nivo.slider.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/socialcount.min.js"></script>
+	<script src="<%=request.getContextPath()%>/resources/js/jquery.quicksand.js" type="text/javascript"></script>
+
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/global.js"></script>
 </body>
 </html>

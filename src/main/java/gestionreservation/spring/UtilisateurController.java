@@ -56,6 +56,10 @@ public class UtilisateurController {
 		this.utilisateurServices.addUtilisateur(usersing);
 		return "redirect:/";
 	}
+	@RequestMapping(value = "/singin", method = RequestMethod.GET)
+	public String singin(Model model) {
+		return "singin";
+	}
 
 	@RequestMapping("/utilisateur/{idUtilisateur}/remove")
 	public String removeUtilisateur(@PathVariable("idUtilisateur") int id) {

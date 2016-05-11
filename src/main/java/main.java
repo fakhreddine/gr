@@ -196,8 +196,8 @@ class main {
 		
 		/*hotels*/
 		Hotel hot1=new Hotel();
-		hot1.setNomHotel("Neptunia Beach");
-		hot1.setDescriptionHotel("Offering an outdoor pool and a restaurant, Neptunia Beach is located in Monastir. Free Wi-Fi access is available. At Neptunia Beach you will find a private beach area and a tennis court.");
+		hot1.setNomHotel("Regency Hotel and Spa");
+		hot1.setDescriptionHotel("Le Regency Hotel and Spa est situé à Monastir, à 5 minutes à pied du centre-ville.");
 		hot1.setCodePostalHotel(1000);
 		hot1.setDirecteur(user1);
 		hot1.setFaxHotel("3554585");
@@ -205,26 +205,85 @@ class main {
 		session.save(hot1);
 		
 		Hotel hot2=new Hotel();
-		hot2.setNomHotel("Delphin Ribat 3-star hotel");
-		hot2.setDescriptionHotel("The hotel Delphin Ribat is located 800 meters from the hotel's private beach and 5 kilometres from Monastir Marina.");
+		hot2.setNomHotel("Private Apartment at Marina Monastir");
+		hot2.setDescriptionHotel("Offering accommodation with air conditioning, Marina Monastir is located in Monastir, 18 km from Sousse. Port El Kantaoui is 24 km away. All units have a TV with satellite channels.");
 		hot2.setCodePostalHotel(1000);
 		hot2.setDirecteur(user1);
 		hot2.setFaxHotel("7355545485");
-		hot1.setNbEtoil(4);
+		hot2.setNbEtoil(4);
 		session.save(hot2);
 		
 		Hotel hot3=new Hotel();
-		hot3.setNomHotel("Caribbean World Monastir - All Inclusive");
-		hot3.setDescriptionHotel("Situated next to the beach, Club Caribbean World Monastir Resort is set in large gardens and offers excellent family entertainment, its own water park and complimentary breakfast.");
+		hot3.setNomHotel("Corniche Hotel");
+		hot3.setDescriptionHotel("La Corniche Guesthouse Monastir se trouve à côté de la mer, à 10 minutes à pied du centre-ville de Monastir. Elle dispose d'un parking gratuit sur place et propose des chambres climatisées.");
 		hot3.setCodePostalHotel(1000);
 		hot3.setDirecteur(user22);
 		hot3.setFaxHotel("735554548");
-		hot1.setNbEtoil(5);
+		hot3.setNbEtoil(5);
 		session.save(hot3);
 		
+		Hotel hot4=new Hotel();
+		hot4.setNomHotel("Delphin Habib");
+		hot4.setDescriptionHotel("Situé sur le front de mer en plein centre-ville de Monastir, le Delphin El Habib rouvre ses portes sur un hall d'entrée majestueux après d'intenses travaux de rénovation complets et de modernisation...");
+		hot4.setCodePostalHotel(1000);
+		hot4.setDirecteur(user22);
+		hot4.setFaxHotel("735554548");
+		hot4.setNbEtoil(5);
+		session.save(hot4);
 		
+		Hotel hot5=new Hotel();
+		hot5.setNomHotel("Monastir Center");
+		hot5.setDescriptionHotel("Le Monastir Center est situé dans le centre-ville de Monastir, en Tunisie. Cet hôtel 4 étoiles propose des chambres avec balcon privé surplombant la piscine extérieure et la mer.");
+		hot5.setCodePostalHotel(1000);
+		hot5.setDirecteur(user22);
+		hot5.setFaxHotel("735554548");
+		hot5.setNbEtoil(3);
+		session.save(hot5);
 		
+		Hotel hot6=new Hotel();
+		hot6.setNomHotel("Caribbean World Monastir - All Inclusive");
+		hot6.setDescriptionHotel("Situated next to the beach, Club Caribbean World Monastir Resort is set in large gardens and offers excellent family entertainment, its own water park and complimentary breakfast.");
+		hot6.setCodePostalHotel(1000);
+		hot6.setDirecteur(user22);
+		hot6.setFaxHotel("735554548");
+		hot6.setNbEtoil(3);
+		session.save(hot6);
 		
+		Hotel hot7=new Hotel();
+		hot7.setNomHotel("Villa Monastir");
+		hot7.setDescriptionHotel("Cette villa est située à Monastir, à 18 km de Sousse. Vous bénéficierez du stationnement privé gratuit. La villa comprend une salle de bains privative avec une baignoire et un bidet..");
+		hot7.setCodePostalHotel(1000);
+		hot7.setDirecteur(user22);
+		hot7.setFaxHotel("735554548");
+		hot7.setNbEtoil(3);
+		session.save(hot7);
+		
+		Hotel hot8=new Hotel();
+		hot8.setNomHotel("Marina Cap Monastir- Appart'hôtel");
+		hot8.setDescriptionHotel("A côté de la marina et de la plage, à 10 minutes à pied du centre-ville, l'appart'hôtel Marina Cap Monastir est idéal pour un séjour de détente. L'hôtel compte 57 appartements, du studio au 4 pièces.");
+		hot8.setCodePostalHotel(1000);
+		hot8.setDirecteur(user22);
+		hot8.setFaxHotel("735554548");
+		hot8.setNbEtoil(3);
+		session.save(hot8);
+
+		Hotel hot9=new Hotel();
+		hot9.setNomHotel("Ramada Liberty Hotel");
+		hot9.setDescriptionHotel("Situé à Monastir, dans la région de Skanes, l'établissement 4 étoiles Ramada Liberty Hotel se situe à 150 mètres d'une plage privée.");
+		hot9.setCodePostalHotel(1000);
+		hot9.setDirecteur(user22);
+		hot9.setFaxHotel("735554548");
+		hot9.setNbEtoil(3);
+		session.save(hot9);
+		
+		Hotel hot10=new Hotel();
+		hot10.setNomHotel("Caribbean World Monastir - All Inclusive");
+		hot10.setDescriptionHotel("Situé à proximité de la plage, le Club Caribbean World Monastir Resort est entouré de grands jardins et propose des divertissements familiaux, dont un parc aquatique.");
+		hot10.setCodePostalHotel(1000);
+		hot10.setDirecteur(user22);
+		hot10.setFaxHotel("735554548");
+		hot10.setNbEtoil(3);
+		session.save(hot10);
 		
 		
 		

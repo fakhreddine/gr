@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/nivo-slider.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/socialcount-with-icons.css" type="text/css" media="screen" />
 	
+	
 	<style>
 		div.ui-datepicker{
 			font-size:11px;
@@ -39,6 +40,8 @@
 		<div class="container-fluid">
 			<jsp:include flush="true" page="/header/2" />
 			<!-- end header -->
+			
+			
 			
 	
 	<div class="span12">	
@@ -91,5 +94,6 @@
 	<script src="<%=request.getContextPath()%>/resources/js/jquery.quicksand.js" type="text/javascript"></script>
 
 	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/global.js"></script>
+	
 </body>
 </html>

@@ -8,14 +8,14 @@
     <meta name="author" content="">
 	
 
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css" type="text/css">
-	<link rel="stylesheet" href="css/hotel.css" type="text/css">
-	<link rel="stylesheet" href="css/hotel-responsive.css" type="text/css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap-responsive.min.css" type="text/css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/hotel.css" type="text/css">
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/hotel-responsive.css" type="text/css">
 
-		<link rel="stylesheet" href="js/slider/default.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/socialcount-with-icons.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/js/slider/default.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/nivo-slider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/socialcount-with-icons.css" type="text/css" media="screen" />
 	
 	<style>
 		div.ui-datepicker{
@@ -275,13 +275,13 @@
 </footer>
 
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/jquery-ui.js"></script>
-	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
-	<script type="text/javascript" src="js/socialcount.min.js"></script>
-	<script src="js/jquery.quicksand.js" type="text/javascript"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery.nivo.slider.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/socialcount.min.js"></script>
+	<script src="<%=request.getContextPath()%>/resources/js/jquery.quicksand.js" type="text/javascript"></script>
 
-	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/global.js"></script>
 </body>
 </html>

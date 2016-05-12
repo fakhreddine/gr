@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/bootstrap-3.3.2.min.css" type="text/css">
 	<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery-2.1.3.min.js"></script>
-        <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/bootstrap-3.3.2.min.js"></script>
+         <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/bootstrap-3.3.2.min.js"></script>
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/css/bootstrap-responsive.min.css" type="text/css">
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/hotel.css" type="text/css">
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/hotel-responsive.css" type="text/css">

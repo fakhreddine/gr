@@ -33,7 +33,7 @@ public class ChambreController {
 	@RequestMapping(value = "/rooms", method = RequestMethod.GET)
 	public String listChambres(Model model) {
 		model.addAttribute("chambre", new Chambre());
-		model.addAttribute("listChambres", this.chambreService.listChambres());
+		model.addAttribute("chambres", this.chambreService.listChambres());
 		return "chambres";
 	}
 	

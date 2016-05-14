@@ -294,38 +294,53 @@ class main {
 		c1.setActiver(true);
 		c1.setNumChambre(1);
 		c1.setTelChambre(104);
+		c1.setHotel(hot1);
 		session.save(c1);
 		
 		Chambre c2 = new Chambre();
 		c2.setCategorie(cat2);
-		c1.setTypechambre(tc3);
+		c2.setTypechambre(tc3);
 		c2.setActiver(true);
 		c2.setNumChambre(1);
 		c2.setTelChambre(145);
+		c2.setHotel(hot3);
 		session.save(c2);
 		
 		Chambre c3 = new Chambre();
 		c3.setCategorie(cat2);
-		c1.setTypechambre(tc2);
+		c3.setTypechambre(tc2);
 		c3.setActiver(true);
 		c3.setNumChambre(1);
 		c3.setTelChambre(144);
+		c3.setHotel(hot4);
 		session.save(c3);
 		
 		Chambre c4 = new Chambre();
 		c4.setCategorie(cat3);
-		c1.setTypechambre(tc1);
+		c4.setTypechambre(tc1);
 		c4.setActiver(true);
 		c4.setNumChambre(1);
 		c4.setTelChambre(143);
+		c4.setHotel(hot1);
 		session.save(c4);
 		
 		Chambre c5 = new Chambre();
 		c5.setCategorie(cat4);
+		c5.setTypechambre(tc1);
 		c5.setActiver(true);
 		c5.setNumChambre(1);
 		c5.setTelChambre(144);
+		c5.setHotel(hot10);
 		session.save(c5);
+		
+		Chambre c6 = new Chambre();
+		c6.setCategorie(cat2);
+		c6.setTypechambre(tc1);
+		c6.setActiver(true);
+		c6.setNumChambre(1);
+		c6.setTelChambre(114);
+		c6.setHotel(hot7);
+		session.save(c6);
 		
 		/*saisons*/
 		Saison s1=new Saison();

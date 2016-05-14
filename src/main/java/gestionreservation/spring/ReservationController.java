@@ -81,6 +81,16 @@ public class ReservationController {
 		model.addAttribute("reservation", new Reservation());
 		return "reservation";
 	}
+	
+	@RequestMapping(value = "/reservation", method = RequestMethod.GET)
+	public String reservation(Model model) {
+		model.addAttribute("typechambres", this.typechambreService.listTypechambres());
+		model.addAttribute("categories", this.categorieService.listCategories());
+		model.addAttribute("pensions", this.pensionService.listPensions());
+		model.addAttribute("saisons", this.saisonService.listSaisons());
+		model.addAttribute("reservation", new Reservation());
+		return "reservation";
+	}
 
 	@RequestMapping(value = "/reservation/comfirm-step-one", method = RequestMethod.POST)
 	public String reservationComfirmStepOne(@ModelAttribute("reservation") Reservation r2, Model model) {

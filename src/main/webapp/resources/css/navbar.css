@@ -10,7 +10,7 @@ ul.dropdown-cart li .item{
     margin: 3px 0;
 }
 ul.dropdown-cart li .item:hover{
-    background-color:#f3f3f3;
+    background-color:#17020b;
 }
 ul.dropdown-cart li .item:after{
     visibility: hidden;
@@ -19,6 +19,9 @@ ul.dropdown-cart li .item:after{
     content: " ";
     clear: both;
     height: 0;
+}
+a{
+	font-weight : bold;
 }
 
 ul.dropdown-cart li .item-left{

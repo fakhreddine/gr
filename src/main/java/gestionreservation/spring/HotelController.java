@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import gestionreservation.spring.model.Hotel;
 import gestionreservation.spring.model.Role;
 import gestionreservation.spring.model.Utilisateur;
+import gestionreservation.spring.service.ChambreService;
 import gestionreservation.spring.service.HotelService;
 import gestionreservation.spring.service.UtilisateurServiceImpl;
 
@@ -30,7 +31,7 @@ public class HotelController {
 	public void setUtilisateurService(UserDetailsService ps) {
 		this.utilisateurService = ps;
 	}
-	private HotelService hotelService;
+	
 	//private UtilisateurServiceImpl utilisateurService;
 	
 //	@Autowired
@@ -42,17 +43,29 @@ public class HotelController {
 	
 	@Autowired(required=true)
 	@Qualifier(value="hotelService")
+	private HotelService hotelService;
 	public void setHotelService(HotelService ps){
 		this.hotelService = ps;
 	}
 	
+	private ChambreService chambreService;	
+	@Autowired(required=true)
+	@Qualifier(value="chambreService")
+	public void setChambreService(ChambreService ps){
+		this.chambreService = ps;
+	}
+	
+	
+	
 	@RequestMapping(value = "/hotels", method = RequestMethod.GET)
 	public String listHotels(Model model) {
+		model.addAttribute("hotel", new Hotel());
 		model.addAttribute("hotels", this.hotelService.listHotels());
 		return "hotels";
 	}
 	@RequestMapping(value = "/hotel/{idHotel}", method = RequestMethod.GET)
 	public String consulterHotel(@PathVariable("idHotel") String idHotel, Model model){
+		model.addAttribute("chambres", this.hotelService.getChambresByHotel(idHotel));
         model.addAttribute("hotel", this.hotelService.getHotelById(idHotel));
 		return "hotel";
 	}
@@ -61,18 +74,8 @@ public class HotelController {
 	@RequestMapping(value= "/hotel/add", method = RequestMethod.POST)
 	
 	public String addHotel(@ModelAttribute("hotel") Hotel p) {
-	//public String addHotel(@ModelAttribute("hotel") Hotel p){
-		
-		if(p.getIdHotel() == "0"){
-			//new person, add it
-			this.hotelService.addHotel(p);
-		}else{
-			//existing person, call update
-			this.hotelService.updateHotel(p);
-		}
-		
-		return "redirect:/hotels";
-		
+		this.hotelService.addHotel(p);
+		return "redirect:/hotels";	
 	}
 	
 	@RequestMapping("/hotel/{idHotel}/remove")

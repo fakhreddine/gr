@@ -13,10 +13,9 @@
 <meta name="author" content="">
 
 
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/bootstrap-3.0.0.css" type="text/css">	
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/styleprincipale.css" type="text/css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/styleprincipale-responsive.css" type="text/css">
-
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/popup_hotel.css" type="text/css">
 
 
 <style>
@@ -36,111 +35,88 @@ div.ui-datepicker {
 		
 		
 		
-		
-	
-		<h1>Bootstrap 3 Variable-Width Modal</h1>
-<p>I wanted to override the default Bootstrap modal so it's variable-width, and height-optimized.</p>
-<p>Add "modal-wide" to the main modal div, and adjust the width in the CSS. In this example, I'm using 90%.</p>
-<p>Since I'm using jQuery to set the max-height of the content area based on the browser dimensions, the modal will be only as tall as necessary, and will provide a scrollbar if needed.</p>
-
-<a data-toggle="modal" href="#normalModal" class="btn btn-default">Normal</a>
-
-<a data-toggle="modal" href="#tallModal" class="btn btn-primary">Wide, Tall Content</a>
-
-<a data-toggle="modal" href="#shortModal" class="btn btn-primary">Wide, Short Content</a>
-
-
-
-
-
-<div id="normalModal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <iframe frameborder="0" scrolling="no" width="700" height="700" src="">
-        </iframe>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div id="tallModal" class="modal modal-wide fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <iframe frameborder="0" scrolling="no" width="700" height="700" src="http://google.about.com/b/2013/04/01/google-nose.htm">
-        </iframe>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div id="shortModal" class="modal modal-wide fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <p>One fine body</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	<div class="container-fluid">
+<div class="container-fluid">
 		<jsp:include flush="true" page="/header/2" />
-		<!-- end header -->
 
-	
+
+<div class="span12">
+
+
+
+
+
+
+        
+        <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="panel-title" id="contactLabel"><span class="glyphicon glyphicon-info-sign"></span> New hotel</h4>
+                    </div>
+                    <c:url var="addHotel" value="/hotel/add" ></c:url>
+					<form:form action="${addHotel}" commandName="hotel">
+                    <div class="modal-body" style="padding: 5px;">
+                          <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                                    <form:input class="form-control" path="nomHotel" placeholder="Label" type="text" required="true" autofocus="true" />
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                                    <form:input class="form-control" path="emailHotel" placeholder="Email" type="text" required="true" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                                    <form:input class="form-control" path="adresseHotel" placeholder="Adress" type="text" required="true" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                                    <form:input class="form-control" path="codePostalHotel" placeholder="Code ZIP" type="text" required="true" />
+                                </div>
+                            </div>
+                            <div class="row">
+                            	<div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                                    <form:input class="form-control" path="telHotel" placeholder="Phone" type="text" required="true" />
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                                    <form:input class="form-control" path="faxHotel" placeholder="Fax" type="text" required="true" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <form:textarea style="resize:vertical;" class="form-control" placeholder="About hotel.." rows="6" path="descriptionHotel" required="true" ></form:textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                	<div id="stars" class="starrr stars" data-rating="2"></div>
+                                    
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                     <form:input id="count" path="nbEtoil"  type="hidden" />
+                                </div>
+                               
+                            </div>
+                            
+                        </div>  
+                    
+	                    <div class="panel-footer" style="margin-bottom:-14px;">
+	                            <button type="submit" class="btn btn-success submit-with-icon" value="Send"> save
+	                            	<span class="glyphicon glyphicon-floppy-disk">
+	                            	</span>
+	                            </button>    
+	                    </div>
+                    </form:form>
+                    </div>
+            </div>
+        </div>
+
+        <a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#contact" data-original-title>
+         Add hotel
+        </a>
+
 		
-
-		<div class="span12">
 			<br />
 			<br />
 			<c:set var="count" value="0" scope="page" />
@@ -172,12 +148,11 @@ div.ui-datepicker {
 
 			</c:forEach>
 		</div>
-	</div>
-	</div>
+</div>
+</div>
 	<%@include file="footer.jsp"%>
-<script type="text/javascript"
-		src="<%=request.getContextPath()%>/resources/js/jquery-1.11.1.js"></script>
-    <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/bootstrap-3.0.0.js"></script>
 
+
+	<script src="<%=request.getContextPath()%>/resources/js/popup_hotel.js" type="text/javascript"></script>
 </body>
 </html>

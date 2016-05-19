@@ -16,8 +16,6 @@
 
 		
 
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/bootstrap-3.0.0.css" type="text/css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/bootstrap-formhelpers.css" type="text/css">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 <style>
@@ -153,9 +151,7 @@ div.ui-datepicker {
 </div>
 	 
 	
-<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery-1.11.1.js"></script>
-        <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/bootstrap-3.0.0.js"></script>
-         <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/bootstrap-formhelpers.js"></script>
+
         
 </body>
 </html>

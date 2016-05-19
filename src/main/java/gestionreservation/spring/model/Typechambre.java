@@ -19,7 +19,7 @@ public class Typechambre implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idType;
+	private int idTypechambre;
 
 	private String descriptionType;
 
@@ -30,12 +30,12 @@ public class Typechambre implements Serializable {
 	public Typechambre() {
 	}
 
-	public int getIdType() {
-		return this.idType;
+	public int getIdTypechambre() {
+		return this.idTypechambre;
 	}
 
-	public void setIdType(int idType) {
-		this.idType = idType;
+	public void setIdTypechambre(int idTypechambre) {
+		this.idTypechambre = idTypechambre;
 	}
 
 	public String getDescriptionType() {

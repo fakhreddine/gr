@@ -43,7 +43,7 @@ public class TypechambreController {
 	public String addTypechambre(@ModelAttribute("typechambre") Typechambre p) {
 	//public String addTypechambre(@ModelAttribute("typechambre") Typechambre p){
 		
-		if(p.getIdType() == 0){
+		if(p.getIdTypechambre() == 0){
 			//new person, add it
 			this.typechambreService.addTypechambre(p);
 		}else{

@@ -117,7 +117,7 @@
 									</span>
 								</span></li>
 								<li class="divider"></li>
-								<li><a class="text-center" href="">View Cart</a></li>
+								<li><a class="text-center" href="/gestionreservation/reservations">View Reservation</a></li>
 							</ul></li>
 					</c:if>
 					<c:if test="${idpage!=4}">
@@ -159,7 +159,7 @@
 									</span>
 								</span></li>
 								<li class="divider"></li>
-								<li><a class="text-center" href="">View Cart</a></li>
+								<li><a class="text-center" href="/gestionreservation/reservations">View Reservation</a></li>
 							</ul></li>
 					</c:if>
 					<c:if test="${idpage==5}">
@@ -179,8 +179,7 @@
 				<ul class="nav navbar-nav navbar-right">
 
 					<c:if test="${idpage==7}">
-						<li class="active"><a href="/gestionreservation/singin">Sing
-								in</a></li>
+						<li class="active"><a href="/gestionreservation/singin">Sing in</a></li>
 					</c:if>
 					<c:if test="${idpage!=7}">
 						<li><a href="/gestionreservation/singin">Sing in</a></li>
@@ -192,18 +191,15 @@
 							<li>
 								<div class="row">
 									<div class="col-md-12">
-										<form class="form" role="form" method="post" action="login"
-											accept-charset="UTF-8" id="login-nav">
+										<form class="form" role="form"
+											accept-charset="UTF-8" id="login-nav" action="j_spring_security_check" method="post">
 											<div class="form-group">
 												<label class="sr-only" for="exampleInputEmail2">Email
-													address</label> <input type="email" class="form-control"
-													id="exampleInputEmail2" placeholder="Email address"
-													required>
+													address</label> <input id="j_username" name="j_username" class="form-control" placeholder="Email address" required>
 											</div>
 											<div class="form-group">
 												<label class="sr-only" for="exampleInputPassword2">Password</label>
-												<input type="password" class="form-control"
-													id="exampleInputPassword2" placeholder="Password" required>
+												<input type="password" id="j_password" name="j_password" class="form-control" placeholder="Password" required>
 											</div>
 											<div class="checkbox">
 												<label> <input type="checkbox"> Remember me

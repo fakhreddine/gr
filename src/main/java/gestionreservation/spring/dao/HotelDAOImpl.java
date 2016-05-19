@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
+import gestionreservation.spring.model.Chambre;
 import gestionreservation.spring.model.Hotel;
 
 @Repository
@@ -58,6 +59,26 @@ public class HotelDAOImpl implements HotelDAO {
 			session.delete(p);
 		}
 		logger.info("Hotel deleted successfully, hotel details="+p);
+	}
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Chambre> getChambresByHotel(String idHotel) {
+		Session session = this.sessionFactory.getCurrentSession();
+		List<Chambre> chambresList = session.createQuery("from Chambre where idHotel='"+idHotel+"'").list();
+		for(Chambre p : chambresList){
+			logger.info("Hotel List::"+p);
+		}
+		return chambresList;
+	}
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Hotel> listHotelsAdmin(String idUtilisateur) {
+		Session session = this.sessionFactory.getCurrentSession();
+		List<Hotel> hotelsList = session.createQuery("from Hotel").list();
+		for(Hotel p : hotelsList){
+			logger.info("Hotel List::"+p);
+		}
+		return hotelsList;
 	}
 
 }

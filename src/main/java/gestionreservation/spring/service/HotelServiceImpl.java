@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import gestionreservation.spring.dao.HotelDAO;
+import gestionreservation.spring.model.Chambre;
 import gestionreservation.spring.model.Hotel;
 
 @Service
@@ -42,5 +43,16 @@ public class HotelServiceImpl implements HotelService {
 		this.hotelDAO.removeHotel(id);
 	}
 
+	@Override
+	public List<Chambre> getChambresByHotel(String idHotel) {
+		return this.hotelDAO.getChambresByHotel(idHotel);
+	}
+
+	@Override
+	public List<Hotel> listHotelsAdmin(String idUtilisateur) {
+		return this.hotelDAO.listHotelsAdmin(idUtilisateur);
+	}
+
+	
 }
 
